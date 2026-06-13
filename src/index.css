@@ -768,169 +768,281 @@ body {
   100% { transform: translate(-110px, 90px) scale(1.15); }
 }
 
-
 /* ============================================================
-   MOBILE RESPONSIVE BREAKPOINTS
+   MOBILE RESPONSIVE — Flipkart-style compact mobile UI
    ============================================================ */
 
-/* --- Tablet & Small Desktop (max-width: 768px) --- */
+/* --- Tablet (max-width: 768px) --- */
 @media (max-width: 768px) {
 
-  /* Product Details — stack image + info vertically */
+  /* Product Details — stack vertically */
   .product-details-container {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-
-  /* Cart / Checkout — stack items + summary vertically */
-  .checkout-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
 
-  /* Checkout form 2-col → 1-col */
+  /* Cart / Checkout — stack vertically */
+  .checkout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
   .checkout-grid form {
     grid-template-columns: 1fr !important;
   }
 
-  /* Hero slide grid handled separately in index.css above */
-
-  /* Details image showcase */
   .details-image-showcase {
-    min-height: 280px !important;
-    padding: 20px !important;
+    min-height: 240px !important;
+    padding: 16px !important;
   }
 
-  /* Horizontal scroll product cards */
+  /* Horizontal scroll — tighter */
   .horizontal-scroll > div {
-    min-width: 220px !important;
-    max-width: 260px !important;
+    min-width: 160px !important;
+    max-width: 180px !important;
+  }
+  .horizontal-scroll {
+    gap: 10px !important;
+    padding: 8px 4px 14px 4px !important;
   }
 
-  /* Category rect boxes */
   .category-rect-box {
-    min-height: 72px !important;
-    padding: 12px 16px !important;
+    min-height: 56px !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
   }
 
-  /* Clay card border radius */
   .clay-card {
-    border-radius: 20px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
+  }
+  .clay-card:hover {
+    transform: none !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
   }
 
-  /* Glass panel (navigation) */
   .glass-panel {
-    border-radius: 18px !important;
+    border-radius: 14px !important;
   }
 
-  /* Floating bottom nav — flush to bottom */
+  /* Bottom nav — compact Flipkart-style tab bar */
   .bottom-nav-bar {
-    bottom: 12px !important;
-    padding: 6px 12px !important;
-    gap: 4px !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    padding: 6px 0 !important;
+    gap: 0 !important;
+    justify-content: space-around !important;
+    background: rgba(255, 255, 255, 0.97) !important;
+    border: none !important;
+    border-top: 1px solid rgba(0,0,0,0.06) !important;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.06) !important;
+    backdrop-filter: blur(12px) !important;
   }
   .bottom-nav-bar button {
-    padding: 6px 12px !important;
-    font-size: 0.8rem !important;
-    gap: 4px !important;
+    flex-direction: column !important;
+    padding: 4px 8px !important;
+    font-size: 0.65rem !important;
+    gap: 2px !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    min-width: 56px !important;
   }
   .bottom-nav-bar button span {
-    display: none !important;
+    display: block !important;
+    font-size: 0.6rem !important;
+    font-weight: 600 !important;
+  }
+  .bottom-nav-bar button svg {
+    width: 18px !important;
+    height: 18px !important;
   }
 
-  /* Admin dashboard table */
   .admin-table-card {
-    border-radius: 18px !important;
+    border-radius: 10px !important;
     overflow-x: auto !important;
+  }
+
+  /* Product grid — 2 columns on tablet */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
   }
 }
 
 /* --- Phone (max-width: 480px) --- */
 @media (max-width: 480px) {
 
-  /* Product grid — single column */
+  /* Product grid — 2 columns, tight gap */
   .product-grid {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
   }
 
-  /* Horizontal scroll product cards — even smaller */
+  /* Horizontal scroll — small product cards */
   .horizontal-scroll > div {
-    min-width: 200px !important;
-    max-width: 230px !important;
+    min-width: 140px !important;
+    max-width: 160px !important;
   }
-
   .horizontal-scroll {
-    gap: 14px !important;
-    padding: 10px 4px 18px 4px !important;
+    gap: 8px !important;
+    padding: 6px 2px 12px 2px !important;
+    scroll-padding-left: 8px;
   }
 
-  /* Category grid — single column on tiny screens */
   .category-rect-box {
-    min-height: 64px !important;
-    padding: 10px 14px !important;
+    min-height: 48px !important;
+    padding: 8px 10px !important;
+    border-radius: 10px !important;
+  }
+  .category-rect-box span {
+    font-size: 0.76rem !important;
   }
 
-  /* Details page */
   .details-image-showcase {
-    min-height: 220px !important;
-    padding: 16px !important;
+    min-height: 200px !important;
+    padding: 12px !important;
   }
-
   .details-inverter-img,
   .details-panel-img,
   .details-scaled-img {
-    max-width: 80% !important;
-    max-height: 80% !important;
+    max-width: 75% !important;
+    max-height: 75% !important;
   }
 
-  /* Glass tab pills — smaller text */
+  /* Glass tab pills */
   .glass-tab {
-    padding: 6px 14px !important;
-    font-size: 0.82rem !important;
-  }
-
-  /* Clay buttons */
-  .clay-btn-primary,
-  .clay-btn-secondary {
-    padding: 10px 18px !important;
-    font-size: 0.88rem !important;
-  }
-
-  /* Round control buttons */
-  .clay-btn-round {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 1.1rem !important;
-  }
-
-  /* Badges */
-  .clay-badge-green,
-  .clay-badge-cream {
-    padding: 4px 10px !important;
-    font-size: 0.72rem !important;
-  }
-
-  /* Bottom navigation — icon only */
-  .bottom-nav-bar {
-    bottom: 8px !important;
-    padding: 5px 10px !important;
-    gap: 2px !important;
-    border-radius: 40px !important;
-  }
-  .bottom-nav-bar button {
-    padding: 6px 10px !important;
+    padding: 5px 12px !important;
     font-size: 0.75rem !important;
   }
 
-  /* Background shapes — smaller on mobile to avoid layout overflow */
-  .shape-1, .shape-2, .shape-3, .shape-4 {
-    filter: blur(100px) !important;
-    opacity: 0.4 !important;
+  /* Compact buttons */
+  .clay-btn-primary,
+  .clay-btn-secondary {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+    border-radius: 8px !important;
   }
-  .shape-1 { width: 300px !important; height: 300px !important; }
-  .shape-2 { width: 250px !important; height: 250px !important; }
-  .shape-3 { width: 280px !important; height: 280px !important; }
-  .shape-4 { width: 200px !important; height: 200px !important; }
+
+  .clay-btn-round {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Compact badges */
+  .clay-badge-green,
+  .clay-badge-cream {
+    padding: 2px 6px !important;
+    font-size: 0.62rem !important;
+    border-radius: 4px !important;
+  }
+
+  /* Cards — compact, flat */
+  .clay-card {
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+    padding: 8px !important;
+  }
+  .clay-card:hover {
+    transform: none !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+    border-color: rgba(255, 237, 213, 0.45) !important;
+  }
+
+  .glass-panel {
+    border-radius: 10px !important;
+  }
+
+  /* Product card image box — compact */
+  .product-img-box {
+    height: 120px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Product card titles — compact */
+  .clay-card h3 {
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+    min-height: 30px !important;
+    -webkit-line-clamp: 2 !important;
+  }
+
+  /* Stars — smaller */
+  .clay-card svg[class*="lucide-star"] {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* Price tag — compact */
+  .clay-card .clay-badge-cream {
+    padding: 4px 8px !important;
+    font-size: 0.72rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* Cart button — smaller */
+  .clay-card .clay-btn-primary {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+  }
+  .clay-card .clay-btn-primary svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Favorite / Edit buttons — smaller */
+  .clay-card button[title="Edit Product"],
+  .clay-card button:has(svg.lucide-heart) {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Bottom nav */
+  .bottom-nav-bar {
+    padding: 4px 0 !important;
+  }
+  .bottom-nav-bar button {
+    padding: 3px 6px !important;
+    font-size: 0.6rem !important;
+    min-width: 48px !important;
+  }
+  .bottom-nav-bar button span {
+    font-size: 0.55rem !important;
+  }
+  .bottom-nav-bar button svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Background shapes — greatly reduced */
+  .shape-1, .shape-2, .shape-3, .shape-4 {
+    filter: blur(80px) !important;
+    opacity: 0.3 !important;
+  }
+  .shape-1 { width: 200px !important; height: 200px !important; }
+  .shape-2 { width: 180px !important; height: 180px !important; }
+  .shape-3 { width: 200px !important; height: 200px !important; }
+  .shape-4 { width: 150px !important; height: 150px !important; }
+
+  /* Input fields — compact */
+  .clay-input {
+    padding: 8px 14px !important;
+    font-size: 0.82rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* Scrollbar — thinner on mobile */
+  ::-webkit-scrollbar {
+    width: 4px !important;
+    height: 3px !important;
+  }
 }
+
 

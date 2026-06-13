@@ -560,21 +560,30 @@ export default function Shop() {
         @media (max-width: 768px) {
           .shop-layout {
             flex-direction: column !important;
-            gap: 16px !important;
+            gap: 10px !important;
           }
           .shop-sidebar {
             width: 100% !important;
             position: static !important;
             max-height: none !important;
             overflow-y: visible !important;
+            padding: 14px !important;
+            border-radius: 10px !important;
           }
         }
         @media (max-width: 480px) {
           .shop-layout {
-            gap: 12px !important;
+            gap: 8px !important;
           }
           .shop-sidebar {
-            padding: 16px !important;
+            padding: 10px !important;
+            border-radius: 8px !important;
+          }
+          .shop-sidebar h4 {
+            font-size: 0.82rem !important;
+          }
+          .shop-sidebar label {
+            font-size: 0.75rem !important;
           }
         }
       `}</style>

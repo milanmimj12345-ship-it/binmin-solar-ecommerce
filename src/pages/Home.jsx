@@ -377,6 +377,58 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .animate-fade-in > section {
+            margin: 16px 6px !important;
+          }
+          .animate-fade-in > section h2 {
+            font-size: 1rem !important;
+            margin-bottom: 2px !important;
+          }
+          .animate-fade-in > section p {
+            font-size: 0.72rem !important;
+            margin-bottom: 10px !important;
+          }
+          .animate-fade-in > section button span {
+            font-size: 0.75rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .animate-fade-in {
+            padding-bottom: 56px !important;
+          }
+          .animate-fade-in > section {
+            margin: 10px 4px !important;
+          }
+          .animate-fade-in > section h2 {
+            font-size: 0.92rem !important;
+          }
+          .animate-fade-in > section p {
+            font-size: 0.68rem !important;
+            margin-bottom: 8px !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] {
+            padding: 14px !important;
+            border-radius: 10px !important;
+            gap: 12px !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] h2 {
+            font-size: 1rem !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] p {
+            font-size: 0.72rem !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] button {
+            padding: 8px 16px !important;
+            font-size: 0.78rem !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] > div {
+            min-width: auto !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

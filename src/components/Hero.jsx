@@ -290,39 +290,56 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-container {
             height: auto !important;
-            min-height: 320px !important;
-            padding: 32px 16px !important;
-            border-radius: 20px !important;
+            min-height: 180px !important;
+            padding: 20px 12px !important;
+            border-radius: 10px !important;
+            margin: 8px 0 !important;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
           }
           .hero-slide-grid {
             grid-template-columns: 1fr !important;
-            padding: 0 16px !important;
-            gap: 16px !important;
+            padding: 0 12px !important;
+            gap: 10px !important;
           }
           .hero-img-col {
             display: none !important;
           }
           .hero-container h1 {
-            font-size: 1.6rem !important;
+            font-size: 1.2rem !important;
+            letter-spacing: -0.3px !important;
           }
           .hero-container p {
-            font-size: 0.88rem !important;
+            font-size: 0.78rem !important;
+            line-height: 1.35 !important;
+          }
+          .hero-container button[style*="position: absolute"] {
+            display: none !important;
+          }
+          .hero-container .clay-btn-primary {
+            padding: 8px 16px !important;
+            font-size: 0.78rem !important;
+            border-radius: 6px !important;
           }
         }
         @media (max-width: 480px) {
           .hero-container {
-            min-height: 260px !important;
-            padding: 24px 12px !important;
-            border-radius: 16px !important;
+            min-height: 150px !important;
+            padding: 16px 10px !important;
+            border-radius: 8px !important;
           }
           .hero-slide-grid {
             padding: 0 8px !important;
           }
           .hero-container h1 {
-            font-size: 1.3rem !important;
+            font-size: 1.05rem !important;
           }
           .hero-container p {
-            font-size: 0.82rem !important;
+            font-size: 0.72rem !important;
+          }
+          .hero-container span[style*="letterSpacing"] {
+            font-size: 0.55rem !important;
+            letter-spacing: 1.5px !important;
+            padding: 3px 8px !important;
           }
         }
       `}</style>

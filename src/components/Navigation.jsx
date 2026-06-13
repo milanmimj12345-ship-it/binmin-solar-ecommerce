@@ -310,17 +310,35 @@ export default function Navigation() {
         }
         @media (max-width: 768px) {
           header {
-            flex-direction: column !important;
-            padding: 12px 16px !important;
-            gap: 10px !important;
-            border-radius: 18px !important;
-            margin: 8px !important;
-            width: calc(100% - 16px) !important;
-            top: 8px !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            padding: 8px 12px !important;
+            gap: 8px !important;
+            border-radius: 0 !important;
+            margin: 0 !important;
+            width: 100% !important;
+            top: 0 !important;
+            position: sticky !important;
+            background: rgba(255, 255, 255, 0.96) !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important;
           }
           header form {
+            order: 3 !important;
             max-width: 100% !important;
             width: 100% !important;
+            flex: 1 1 100% !important;
+          }
+          header form input {
+            font-size: 0.8rem !important;
+            height: 36px !important;
+            padding: 8px 40px 8px 14px !important;
+            border-radius: 8px !important;
+          }
+          header form button {
+            width: 28px !important;
+            height: 28px !important;
           }
           .nav-tabs {
             display: none !important;
@@ -328,21 +346,17 @@ export default function Navigation() {
         }
         @media (max-width: 480px) {
           header {
-            padding: 10px 12px !important;
-            gap: 8px !important;
-            border-radius: 16px !important;
-            margin: 6px !important;
-            width: calc(100% - 12px) !important;
-            top: 6px !important;
+            padding: 6px 8px !important;
+            gap: 6px !important;
           }
           header form input {
-            font-size: 0.82rem !important;
-            height: 38px !important;
-            padding: 10px 44px 10px 16px !important;
+            font-size: 0.76rem !important;
+            height: 34px !important;
+            padding: 6px 36px 6px 12px !important;
           }
           header form button {
-            width: 30px !important;
-            height: 30px !important;
+            width: 26px !important;
+            height: 26px !important;
           }
         }
       `}</style>
