@@ -115,7 +115,7 @@ function AppContent() {
       </main>
 
       {/* Glassmorphic Footer */}
-      <footer className="glass-panel" style={{
+      <footer className="glass-panel app-footer" style={{
         margin: '40px 16px 24px 16px',
         padding: '32px',
         borderRadius: '24px',
@@ -184,7 +184,7 @@ function AppContent() {
       </footer>
 
       {/* Floating Bottom Navigation Bar for Home and Shop */}
-      <div style={{
+      <div className="bottom-nav-bar" style={{
         position: 'fixed',
         bottom: '24px',
         left: '50%',
@@ -284,6 +284,30 @@ function AppContent() {
         @keyframes bounce {
           0% { transform: translateY(0); }
           100% { transform: translateY(-4px); }
+        }
+        @media (max-width: 768px) {
+          main {
+            padding: 0 8px !important;
+          }
+          .app-footer {
+            margin: 24px 8px 16px 8px !important;
+            padding: 20px 16px !important;
+            border-radius: 18px !important;
+          }
+          .app-footer > div:first-child {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .app-footer {
+            margin: 16px 6px 12px 6px !important;
+            padding: 16px 12px !important;
+          }
+          .app-footer > div:last-child span {
+            font-size: 0.72rem !important;
+          }
         }
       `}</style>
     </div>

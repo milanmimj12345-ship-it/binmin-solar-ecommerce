@@ -546,6 +546,17 @@ export default function ProductDetails() {
             font-size: 1.6rem !important;
           }
         }
+        @media (max-width: 480px) {
+          .product-details-container {
+            gap: 16px !important;
+          }
+          .product-details-container .clay-card div[style*="grid-template-columns: 1fr 1fr"] {
+            grid-template-columns: 1fr !important;
+          }
+          h1 {
+            font-size: 1.3rem !important;
+          }
+        }
       `}</style>
     </div>
   );

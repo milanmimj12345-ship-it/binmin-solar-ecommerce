@@ -408,6 +408,7 @@ export default function SolarPackageConfigurator() {
   };
 
   return (
+    <>
     <div style={{ padding: '24px 16px 100px 16px' }} className="animate-fade-in">
       {!selectedType ? (
         /* STEP 1: Select Type of Package */
@@ -668,7 +669,7 @@ export default function SolarPackageConfigurator() {
           </div>
 
           {/* Component Customization Grid */}
-          <div style={{
+          <div className="configurator-grid" style={{
             display: 'grid',
             gridTemplateColumns: '1.4fr 0.9fr',
             gap: '40px',
@@ -1015,5 +1016,20 @@ export default function SolarPackageConfigurator() {
         </div>
       )}
     </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .configurator-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .configurator-grid {
+            gap: 14px !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }

@@ -311,18 +311,38 @@ export default function Navigation() {
         @media (max-width: 768px) {
           header {
             flex-direction: column !important;
-            padding: 16px !important;
-            gap: 12px !important;
+            padding: 12px 16px !important;
+            gap: 10px !important;
             border-radius: 18px !important;
-            margin: 10px !important;
-            width: calc(100% - 20px) !important;
+            margin: 8px !important;
+            width: calc(100% - 16px) !important;
+            top: 8px !important;
           }
-          form {
+          header form {
             max-width: 100% !important;
             width: 100% !important;
           }
           .nav-tabs {
             display: none !important;
+          }
+        }
+        @media (max-width: 480px) {
+          header {
+            padding: 10px 12px !important;
+            gap: 8px !important;
+            border-radius: 16px !important;
+            margin: 6px !important;
+            width: calc(100% - 12px) !important;
+            top: 6px !important;
+          }
+          header form input {
+            font-size: 0.82rem !important;
+            height: 38px !important;
+            padding: 10px 44px 10px 16px !important;
+          }
+          header form button {
+            width: 30px !important;
+            height: 30px !important;
           }
         }
       `}</style>

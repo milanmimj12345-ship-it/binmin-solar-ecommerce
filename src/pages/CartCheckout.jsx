@@ -448,6 +448,16 @@ export default function CartCheckout() {
             gap: 24px !important;
           }
         }
+        @media (max-width: 768px) {
+          .checkout-grid form {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .checkout-grid {
+            gap: 16px !important;
+          }
+        }
       `}</style>
     </div>
   );

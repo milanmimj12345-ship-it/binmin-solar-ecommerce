@@ -169,7 +169,7 @@ export default function Shop() {
         <span>Back to Home</span>
       </button>
 
-      <div style={{
+      <div className="shop-layout" style={{
         display: 'flex',
         gap: '24px',
         position: 'relative',
@@ -179,7 +179,7 @@ export default function Shop() {
       {/* LEFT Collapsible Filters Sidebar */}
       {isSidebarOpen && (
         <aside 
-          className="clay-card"
+          className="clay-card shop-sidebar"
           style={{
             width: '320px',
             flexShrink: 0,
@@ -553,7 +553,31 @@ export default function Shop() {
           </div>
         )}
       </div>
+
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .shop-layout {
+            flex-direction: column !important;
+            gap: 16px !important;
+          }
+          .shop-sidebar {
+            width: 100% !important;
+            position: static !important;
+            max-height: none !important;
+            overflow-y: visible !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .shop-layout {
+            gap: 12px !important;
+          }
+          .shop-sidebar {
+            padding: 16px !important;
+          }
+        }
+      `}</style>
     </div>
-  </div>
   );
 }

@@ -288,22 +288,41 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 768px) {
-          .clay-card {
+          .hero-container {
             height: auto !important;
-            min-height: 380px !important;
-            padding: 40px 20px !important;
+            min-height: 320px !important;
+            padding: 32px 16px !important;
+            border-radius: 20px !important;
           }
-          button {
+          .hero-slide-grid {
+            grid-template-columns: 1fr !important;
+            padding: 0 16px !important;
+            gap: 16px !important;
+          }
+          .hero-img-col {
             display: none !important;
           }
-          h1 {
-            font-size: 1.8rem !important;
+          .hero-container h1 {
+            font-size: 1.6rem !important;
           }
-          p {
-            font-size: 0.9rem !important;
+          .hero-container p {
+            font-size: 0.88rem !important;
           }
-          div {
-            padding: 0 10px !important;
+        }
+        @media (max-width: 480px) {
+          .hero-container {
+            min-height: 260px !important;
+            padding: 24px 12px !important;
+            border-radius: 16px !important;
+          }
+          .hero-slide-grid {
+            padding: 0 8px !important;
+          }
+          .hero-container h1 {
+            font-size: 1.3rem !important;
+          }
+          .hero-container p {
+            font-size: 0.82rem !important;
           }
         }
       `}</style>

@@ -143,7 +143,7 @@ export default function UserProfile() {
 
       {/* TAB CONTENT: Orders History & Live Tracker */}
       {activeTab === 'orders' && (
-        <div style={{ display: 'grid', gridTemplateColumns: selectedOrderId ? '1fr 1fr' : '1fr', gap: '24px', alignItems: 'start' }}>
+        <div className="profile-orders-grid" style={{ display: 'grid', gridTemplateColumns: selectedOrderId ? '1fr 1fr' : '1fr', gap: '24px', alignItems: 'start' }}>
           
           {/* Orders list */}
           <div className="clay-card" style={{ padding: '24px', borderRadius: '24px' }}>
@@ -492,6 +492,20 @@ export default function UserProfile() {
           </form>
         </div>
       )}
+
+      <style>{`
+        @media (max-width: 768px) {
+          .profile-orders-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .profile-orders-grid {
+            gap: 12px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

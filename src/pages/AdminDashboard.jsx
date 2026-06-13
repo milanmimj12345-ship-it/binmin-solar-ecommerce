@@ -471,7 +471,7 @@ export default function AdminDashboard() {
             Add Solar Product listing
           </h3>
 
-          <form onSubmit={handleAddProductSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+          <form onSubmit={handleAddProductSubmit} className="admin-add-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             
             <div style={{ gridColumn: 'span 2' }}>
               <label style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-medium)', display: 'block', marginBottom: '6px' }}>Product Title</label>
@@ -674,6 +674,23 @@ export default function AdminDashboard() {
       )}
 
 
+
+      <style>{`
+        @media (max-width: 768px) {
+          .admin-add-form {
+            grid-template-columns: 1fr !important;
+          }
+          .admin-add-form div[style*="span 2"] {
+            grid-column: span 1 !important;
+          }
+          .admin-table-card {
+            overflow-x: auto !important;
+          }
+          .admin-table-card table {
+            min-width: 600px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
