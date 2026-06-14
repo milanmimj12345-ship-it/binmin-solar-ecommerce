@@ -394,7 +394,42 @@ export default function Home() {
           .animate-fade-in > section button span {
             font-size: 0.75rem !important;
           }
+
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 12px 16px !important;
+            border-radius: 12px !important;
+            gap: 12px !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] > div {
+            min-width: 0 !important;
+            flex: 1 !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] span {
+            display: none !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] h2 {
+            font-size: 0.95rem !important;
+            margin: 0 !important;
+            line-height: 1.25 !important;
+            color: #2B1D0F !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] p {
+            display: none !important;
+          }
+          .animate-fade-in > section .clay-card[style*="linear-gradient"] button {
+            padding: 8px 16px !important;
+            font-size: 0.8rem !important;
+            border-radius: 30px !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+          }
         }
+
         @media (max-width: 480px) {
           .animate-fade-in {
             padding-bottom: 56px !important;
@@ -409,23 +444,18 @@ export default function Home() {
             font-size: 0.68rem !important;
             margin-bottom: 8px !important;
           }
+
           .animate-fade-in > section .clay-card[style*="linear-gradient"] {
-            padding: 14px !important;
+            padding: 10px 12px !important;
             border-radius: 10px !important;
-            gap: 12px !important;
+            gap: 10px !important;
           }
           .animate-fade-in > section .clay-card[style*="linear-gradient"] h2 {
-            font-size: 1rem !important;
-          }
-          .animate-fade-in > section .clay-card[style*="linear-gradient"] p {
-            font-size: 0.72rem !important;
+            font-size: 0.85rem !important;
           }
           .animate-fade-in > section .clay-card[style*="linear-gradient"] button {
-            padding: 8px 16px !important;
-            font-size: 0.78rem !important;
-          }
-          .animate-fade-in > section .clay-card[style*="linear-gradient"] > div {
-            min-width: auto !important;
+            padding: 6px 12px !important;
+            font-size: 0.72rem !important;
           }
         }
       `}</style>
