@@ -202,7 +202,7 @@ export default function CartCheckout() {
             <h3 style={{ fontSize: '1.1rem', fontWeight: '800', marginBottom: '16px' }}>Selected Items</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {cart.map(item => (
-                <div key={item.product.id} style={{
+                <div key={item.product.id} className="cart-item-row" style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '16px',
@@ -219,7 +219,8 @@ export default function CartCheckout() {
                       background: 'radial-gradient(circle, #FDFEFE 0%, #EAEDED 100%)',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center'
+                      justifyContent: 'center',
+                      flexShrink: 0
                     }}>
                       <span style={{ fontSize: '0.6rem', fontWeight: '800', color: 'var(--text-light)' }}>{item.product.category}</span>
                     </div>
@@ -248,7 +249,7 @@ export default function CartCheckout() {
                   </div>
 
                   {/* Quantity Modifier and Total */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+                  <div className="cart-item-controls" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <button onClick={() => updateCartQuantity(item.product.id, item.quantity - 1)} className="clay-btn-round" style={{ width: '30px', height: '30px', fontSize: '0.9rem' }}>-</button>
                       <span style={{ fontWeight: '700', fontSize: '0.95rem', width: '24px', textAlign: 'center' }}>{item.quantity}</span>
@@ -453,9 +454,32 @@ export default function CartCheckout() {
             grid-template-columns: 1fr !important;
           }
         }
+        @media (max-width: 600px) {
+          .cart-item-row {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 12px !important;
+          }
+          .cart-item-controls {
+            width: 100% !important;
+            justify-content: space-between !important;
+            gap: 12px !important;
+            border-top: 1px dashed rgba(0,0,0,0.06);
+            padding-top: 10px;
+          }
+          .checkout-grid .clay-card {
+            padding: 14px !important;
+          }
+        }
         @media (max-width: 480px) {
           .checkout-grid {
             gap: 16px !important;
+          }
+          .checkout-grid .clay-card {
+            padding: 10px !important;
+          }
+          .cart-item-row {
+            padding-bottom: 12px !important;
           }
         }
       `}</style>
