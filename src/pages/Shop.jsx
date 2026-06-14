@@ -1,7 +1,7 @@
 import React, { useContext, useState, useMemo } from 'react';
 import { AppContext } from '../context/AppContext';
 import ProductCard from '../components/ProductCard';
-import { Filter, ArrowUpDown, ChevronDown, ChevronUp, SearchX, ShoppingBag, ChevronLeft } from 'lucide-react';
+import { Filter, ArrowUpDown, ChevronDown, ChevronUp, SearchX, ShoppingBag, ChevronLeft, X } from 'lucide-react';
 
 export default function Shop() {
   const { 
@@ -13,7 +13,7 @@ export default function Shop() {
     setCurrentPage
   } = useContext(AppContext);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
   const [expandedSection, setExpandedSection] = useState({
     brand: true,
     specs: true,
@@ -176,6 +176,25 @@ export default function Shop() {
         alignItems: 'flex-start'
       }}>
       
+      {/* Backdrop overlay for mobile drawer */}
+      {isSidebarOpen && (
+        <div 
+          className="mobile-filter-backdrop"
+          onClick={() => setIsSidebarOpen(false)}
+          style={{
+            display: 'none',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(0, 0, 0, 0.4)',
+            zIndex: 999,
+            backdropFilter: 'blur(2px)'
+          }}
+        />
+      )}
+      
       {/* LEFT Collapsible Filters Sidebar */}
       {isSidebarOpen && (
         <aside 
@@ -198,26 +217,42 @@ export default function Shop() {
             borderBottom: '1px solid rgba(0,0,0,0.06)',
             paddingBottom: '12px'
           }}>
-            <h3 style={{ fontWeight: '800', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <h3 style={{ fontWeight: '800', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
               <Filter size={18} style={{ color: 'var(--primary-green)' }} />
               Filters
             </h3>
-            <button 
-              onClick={handleResetFilters}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'var(--text-light)',
-                fontWeight: '600',
-                fontSize: '0.8rem',
-                cursor: 'pointer',
-                transition: 'var(--transition-smooth)'
-              }}
-              onMouseEnter={e => e.currentTarget.style.color = '#E74C3C'}
-              onMouseLeave={e => e.currentTarget.style.color = 'var(--text-light)'}
-            >
-              Reset All
-            </button>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <button 
+                onClick={handleResetFilters}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--text-light)',
+                  fontWeight: '600',
+                  fontSize: '0.8rem',
+                  cursor: 'pointer',
+                  transition: 'var(--transition-smooth)'
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = '#E74C3C'}
+                onMouseLeave={e => e.currentTarget.style.color = 'var(--text-light)'}
+              >
+                Reset All
+              </button>
+              <button 
+                onClick={() => setIsSidebarOpen(false)}
+                className="mobile-close-filters"
+                style={{
+                  display: 'none',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: 'var(--text-dark)',
+                  padding: 0
+                }}
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
 
           {/* Category Filter Pills inside sidebar */}
@@ -562,13 +597,30 @@ export default function Shop() {
             flex-direction: column !important;
             gap: 10px !important;
           }
+          .mobile-filter-backdrop {
+            display: block !important;
+          }
+          .mobile-close-filters {
+            display: block !important;
+          }
           .shop-sidebar {
-            width: 100% !important;
-            position: static !important;
-            max-height: none !important;
-            overflow-y: visible !important;
-            padding: 14px !important;
-            border-radius: 10px !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 290px !important;
+            height: 100vh !important;
+            max-height: 100vh !important;
+            z-index: 1000 !important;
+            background: #FFFDF9 !important;
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15) !important;
+            border-radius: 0 16px 16px 0 !important;
+            padding: 24px 16px 80px 16px !important;
+            overflow-y: auto !important;
+            animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          }
+          @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
           }
         }
         @media (max-width: 480px) {
@@ -576,8 +628,8 @@ export default function Shop() {
             gap: 8px !important;
           }
           .shop-sidebar {
-            padding: 10px !important;
-            border-radius: 8px !important;
+            width: 270px !important;
+            padding: 20px 12px 80px 12px !important;
           }
           .shop-sidebar h4 {
             font-size: 0.82rem !important;
