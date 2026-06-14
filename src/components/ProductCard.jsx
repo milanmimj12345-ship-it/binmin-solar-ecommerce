@@ -560,8 +560,8 @@ export default function ProductCard({ product }) {
         /* ===== MOBILE-ONLY COMPACT PRODUCT CARD ===== */
         @media (max-width: 768px) {
           .clay-card.animate-fade-in {
-            padding: 10px !important;
-            border-radius: 10px !important;
+            padding: 12px !important;
+            border-radius: 12px !important;
             box-shadow: 0 1px 4px rgba(0,0,0,0.07) !important;
             gap: 0 !important;
           }
@@ -571,24 +571,90 @@ export default function ProductCard({ product }) {
           }
           /* Top tag row */
           .clay-card.animate-fade-in > div:first-child {
-            margin-bottom: 6px !important;
+            margin-bottom: 8px !important;
           }
           /* Badges in top row */
           .clay-card.animate-fade-in > div:first-child span {
-            font-size: 0.6rem !important;
-            padding: 2px 6px !important;
+            font-size: 0.65rem !important;
+            padding: 2px 8px !important;
             border-radius: 4px !important;
           }
           /* Fav / Edit buttons */
           .clay-card.animate-fade-in > div:first-child button {
-            width: 24px !important;
-            height: 24px !important;
+            width: 26px !important;
+            height: 26px !important;
           }
           .clay-card.animate-fade-in > div:first-child button svg {
+            width: 13px !important;
+            height: 13px !important;
+          }
+          /* Image box */
+          .clay-card.animate-fade-in .product-img-box {
+            height: 130px !important;
+            margin-bottom: 8px !important;
+          }
+          .clay-card.animate-fade-in .product-img-box svg {
+            height: 120px !important;
+          }
+          .clay-card.animate-fade-in .product-img-box img {
+            max-height: 120px !important;
+          }
+          /* Rating row */
+          .clay-card.animate-fade-in > div:nth-child(3) {
+            margin-bottom: 6px !important;
+            gap: 3px !important;
+          }
+          .clay-card.animate-fade-in > div:nth-child(3) svg {
             width: 12px !important;
             height: 12px !important;
           }
-          /* Image box */
+          .clay-card.animate-fade-in > div:nth-child(3) span {
+            font-size: 0.7rem !important;
+          }
+          /* Product title */
+          .clay-card.animate-fade-in h3 {
+            font-size: 0.85rem !important;
+            line-height: 1.3 !important;
+            margin-bottom: 8px !important;
+            min-height: 0 !important;
+            -webkit-line-clamp: 2 !important;
+          }
+          /* Price + Cart row */
+          .clay-card.animate-fade-in > div:last-child {
+            gap: 6px !important;
+          }
+          .clay-card.animate-fade-in > div:last-child .clay-badge-cream {
+            padding: 4px 10px !important;
+            font-size: 0.85rem !important;
+            border-radius: 4px !important;
+            box-shadow: none !important;
+          }
+          .clay-card.animate-fade-in > div:last-child .clay-btn-primary {
+            width: 32px !important;
+            height: 32px !important;
+            border-radius: 50% !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+          }
+          .clay-card.animate-fade-in > div:last-child .clay-btn-primary svg {
+            width: 14px !important;
+            height: 14px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .clay-card.animate-fade-in {
+            padding: 10px !important;
+            border-radius: 10px !important;
+          }
+          .clay-card.animate-fade-in > div:first-child span {
+            font-size: 0.6rem !important;
+            padding: 2px 6px !important;
+          }
+          .clay-card.animate-fade-in > div:first-child button {
+            width: 24px !important;
+            height: 24px !important;
+          }
           .clay-card.animate-fade-in .product-img-box {
             height: 110px !important;
             margin-bottom: 6px !important;
@@ -599,87 +665,21 @@ export default function ProductCard({ product }) {
           .clay-card.animate-fade-in .product-img-box img {
             max-height: 100px !important;
           }
-          /* Rating row */
-          .clay-card.animate-fade-in > div:nth-child(3) {
-            margin-bottom: 4px !important;
-            gap: 2px !important;
-          }
-          .clay-card.animate-fade-in > div:nth-child(3) svg {
-            width: 10px !important;
-            height: 10px !important;
-          }
-          .clay-card.animate-fade-in > div:nth-child(3) span {
-            font-size: 0.65rem !important;
-          }
-          /* Product title */
           .clay-card.animate-fade-in h3 {
-            font-size: 0.75rem !important;
-            line-height: 1.25 !important;
+            font-size: 0.76rem !important;
             margin-bottom: 6px !important;
-            min-height: 0 !important;
-            -webkit-line-clamp: 2 !important;
-          }
-          /* Price + Cart row */
-          .clay-card.animate-fade-in > div:last-child {
-            gap: 4px !important;
           }
           .clay-card.animate-fade-in > div:last-child .clay-badge-cream {
-            padding: 4px 8px !important;
-            font-size: 0.75rem !important;
-            border-radius: 4px !important;
-            box-shadow: none !important;
+            padding: 3px 8px !important;
+            font-size: 0.76rem !important;
           }
           .clay-card.animate-fade-in > div:last-child .clay-btn-primary {
-            width: 28px !important;
-            height: 28px !important;
-            border-radius: 50% !important;
-            padding: 0 !important;
-            box-shadow: none !important;
+            width: 30px !important;
+            height: 30px !important;
           }
           .clay-card.animate-fade-in > div:last-child .clay-btn-primary svg {
             width: 13px !important;
             height: 13px !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .clay-card.animate-fade-in {
-            padding: 8px !important;
-            border-radius: 8px !important;
-          }
-          .clay-card.animate-fade-in > div:first-child span {
-            font-size: 0.55rem !important;
-            padding: 1px 5px !important;
-          }
-          .clay-card.animate-fade-in > div:first-child button {
-            width: 22px !important;
-            height: 22px !important;
-          }
-          .clay-card.animate-fade-in .product-img-box {
-            height: 95px !important;
-            margin-bottom: 5px !important;
-          }
-          .clay-card.animate-fade-in .product-img-box svg {
-            height: 85px !important;
-          }
-          .clay-card.animate-fade-in .product-img-box img {
-            max-height: 85px !important;
-          }
-          .clay-card.animate-fade-in h3 {
-            font-size: 0.68rem !important;
-            margin-bottom: 5px !important;
-          }
-          .clay-card.animate-fade-in > div:last-child .clay-badge-cream {
-            padding: 3px 6px !important;
-            font-size: 0.68rem !important;
-          }
-          .clay-card.animate-fade-in > div:last-child .clay-btn-primary {
-            width: 26px !important;
-            height: 26px !important;
-          }
-          .clay-card.animate-fade-in > div:last-child .clay-btn-primary svg {
-            width: 12px !important;
-            height: 12px !important;
           }
         }
       `}</style>
