@@ -805,10 +805,52 @@ body {
     padding: 8px 4px 14px 4px !important;
   }
 
+  .category-scroll-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding: 4px 4px 10px 4px !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+  .category-scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Opera */
+  }
+
   .category-rect-box {
-    min-height: 56px !important;
-    padding: 10px 12px !important;
-    border-radius: 12px !important;
+    flex-direction: column-reverse !important; /* image on top, text on bottom */
+    width: 68px !important;
+    height: 68px !important;
+    min-height: unset !important;
+    flex: 0 0 auto !important;
+    border-radius: 4px !important; /* square shape! */
+    padding: 4px 6px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 3px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
+  }
+  .category-rect-box .clay-card-inset {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 3px !important; /* square shape! */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  .category-rect-box span {
+    font-size: 0.55rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
   }
 
   .clay-card {
@@ -894,12 +936,21 @@ body {
   }
 
   .category-rect-box {
-    min-height: 48px !important;
-    padding: 8px 10px !important;
-    border-radius: 10px !important;
+    width: 62px !important;
+    height: 62px !important;
+    min-height: unset !important;
+    padding: 3px 5px !important;
+    border-radius: 4px !important; /* square shape! */
+    gap: 2px !important;
+  }
+  .category-rect-box .clay-card-inset {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 2px !important;
   }
   .category-rect-box span {
-    font-size: 0.76rem !important;
+    font-size: 0.52rem !important;
+    line-height: 1.1 !important;
   }
 
   .details-image-showcase {

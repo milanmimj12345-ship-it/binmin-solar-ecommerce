@@ -207,7 +207,7 @@ export default function Home() {
         <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', marginBottom: '20px' }}>
           Explore our range of premium solar systems, panels, storage units, and wiring components
         </p>
-        <div style={{
+        <div className="category-scroll-container" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
           gap: '16px'
